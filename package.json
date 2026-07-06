@@ -1,0 +1,16 @@
+{
+  "name": "web-startr-team",
+  "version": "0.1.0",
+  "description": "Startr.Team — agent framework spec and examples",
+  "scripts": {
+    "start": "cd src && npx @11ty/eleventy --serve --output=../_site",
+    "build": "cd src && npx @11ty/eleventy --output=../_site",
+    "buildfresh": "rm -rf _site && mkdir _site && cd src && npx @11ty/eleventy --output=../_site"
+  },
+  "keywords": ["agent-framework", "startr", "nlt", "llm-agents", "spec"],
+  "author": "Startr.Team",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

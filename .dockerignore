@@ -1,0 +1,18 @@
+# Hidden-artifact allowlist: deny dotfiles and dotfolders everywhere in the
+# build context unless they are intentionally needed inside the image.
+.*
+
+# Build & runtime junk
+node_modules/
+_site/
+*.log
+*.tgz
+
+# Repo metadata not needed inside the image
+README.md
+LICENSE
+Makefile
+TODO.md
+CLAUDE.md
+netlify.toml
+captain-definition

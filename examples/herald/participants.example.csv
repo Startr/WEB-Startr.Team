@@ -1,0 +1,3 @@
+id,name,pronouns,email,signal,whatsapp,groups,aliases,role,standing,avg_response_hours,asked,fulfilled,last_contacted,last_responded,notes,created,updated
+izzy,Izzy,she/her,izzy@example.com,+15550001111,,design team,iz,,,,0,0,,,,2026-01-01T00:00:00+00:00,2026-01-01T00:00:00+00:00
+alex,Alex,he/him,alex@example.com,,+15550002222,design team;ops,,,,,0,0,,,,2026-01-01T00:00:00+00:00,2026-01-01T00:00:00+00:00

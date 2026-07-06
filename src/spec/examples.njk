@@ -1,0 +1,32 @@
+---
+layout: default
+title: "Examples"
+description: "The runnable examples — rendered from their literal source, not copied snippets."
+permalink: /spec/examples/
+---
+
+<h1>Examples</h1>
+
+<p>These pages render the <strong>literal source</strong> of the runnable
+examples in the <a href="https://github.com/Startr/WEB-Startr.Team">site
+repo's</a> <code>examples/</code> directory — built from the same files you
+run, so they cannot drift. Each example assumes
+<code>startr-team</code> is installed and an LLM is configured
+(<a href="/spec/config/">Configuration</a>).</p>
+
+{% for example in examples %}
+  <h2 id="{{ example.name }}"><code>{{ example.name }}</code></h2>
+  {% if example.intro %}<p>{{ example.intro }}</p>{% endif %}
+  {% for file in example.files %}
+    <details {% if loop.first %}open{% endif %}>
+      <summary style="--p:0.5rem 0; --weight:600; --cur:pointer">{{ example.name }}/{{ file.rel }}</summary>
+      <pre><code class="language-{{ file.lang }}">{{ file.content }}</code></pre>
+    </details>
+  {% endfor %}
+{% endfor %}
+
+<p style="--mt:2rem">To run one: clone the site repo, <code>cd examples/&lt;name&gt;</code>,
+set your environment, and <code>python run.py</code>. The
+<code>review_loop</code> plan vault (<code>examples/review_loop/plans/</code>)
+opens directly in Obsidian or SilverBullet — watch node status change while
+the agent runs.</p>

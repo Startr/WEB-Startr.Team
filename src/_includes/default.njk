@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} — {{ site.name }}{% else %}{{ site.name }}, A New Way to Work{% endif %}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <meta property="og:title" content="{{ title or site.name }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}/assets/images/dither_it_Startr.Team.3.png">
+
+  <!-- The Startr.Team look: startr.style + System 7 (Startr/system7.css, vendored
+       with its fonts and icons so the theme cannot rot). Do not restyle modern. -->
+  <link rel="stylesheet" href="https://startr.style/style.css">
+  <link rel="stylesheet" href="/assets/css/system7.css">
+  <style>
+    /* The live startr.team column (its local style.css), verbatim. */
+    body { max-width: 50rem; padding: 2rem; margin: auto; font-size: 120%; }
+    img { display: block; max-width: 100%; }
+    h1 { display: block; margin: auto; text-align: center; }
+    /* Docs additions in the same monochrome voice — system7 leaves these unstyled.
+       color:#000 is required: startr.style paints code/samp text with
+       var(--background), which is white-on-white over these white chips. */
+    main pre { font-family: Monaco, monospace; background: #fff; border: 2px solid #000; box-shadow: 2px 2px 0 0 #000; padding: 1rem; overflow-x: auto; font-size: 0.7em; line-height: 1.5; }
+    main pre code { background: transparent; color: #000; border: none; padding: 0; }
+    main :not(pre) > code { font-family: Monaco, monospace; font-size: 0.85em; background: #fff; color: #000; border: 1px solid #000; padding: 0 0.25em; }
+    main table { border-collapse: collapse; width: 100%; display: block; overflow-x: auto; font-size: 0.85em; }
+    main th, main td { border: 1px solid #000; padding: 0.4rem 0.6rem; text-align: left; }
+    details summary { cursor: pointer; font-family: Chicago, Geneva, sans-serif; }
+  </style>
+
+  <script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//visitas.startr.cloud/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '3']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+</head>
+<body>
+  <nav>
+    <a href="/">Startr.Team</a>
+    <a href="/spec/">Spec</a>
+    <a href="/spec/examples/">Examples</a>
+    <a href="{{ site.libRepo }}">Library</a>
+  </nav>
+  <hr>
+
+  {% if '/spec' in page.url %}
+  <div class="standard-dialog" style="--ta:center; --size:0.8em; --mb:1.5rem">
+    Draft — Startr.Team Agent Framework Specification v{{ site.specVersion | replace(" (Draft)", "") }}
+  </div>
+  {% endif %}
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <hr>
+  <footer style="--ta:center; --size:0.8em; --p:1rem 0">
+    <p>Startr.Team — spec and reference library, Apache-2.0.
+    Built from working agents by <a href="https://startr.ca">Startr</a>.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Startr allowlist convention: deny dotfiles, then re-include the tracked ones.
+.*
+!.gitignore
+!.dockerignore
+!.eleventy.js
+!.github
+!.todoscope-exclude.csv
+
+# Build output & deps
+_site/
+node_modules/
+*.log
+
+# Local env
+.env
